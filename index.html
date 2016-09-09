@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<html>
+	
+	<head>
+	    <title>Hello, Jm's HTML Template</title>
+		<link rel="stylesheet" href="assets/css/main.css" type="text/css" />
+	</head>
+	
+	<body>
+		<header>
+			<h1>HTML 5 Demo Template : Simple</h1>
+		</header>
+		<nav>
+			<ul id="links">
+				<li>All Play</li>
+				<li>All Record</li>
+				<li>Selector</li>
+			</ul>
+		</nav>			
+		<section>
+			<div class='track'>
+				<aside>
+					<h2>Track1</h2>
+					<img id='play' class='NoPlaying' src='images/play.png'  onclick='Play(this);'/>
+					<img id='pause' src='images/pause.png' onclick='Pause(this);'/>
+					<img id='record' src='images/recordOn.png'>
+					<img id='mute' src='images/muteoff.png'>
+				</aside>
+				<canvas ondrop='dropping(event)' ondragover='allowDrop(event)' draggable='true'></canvas>
+			</div>
+			<div class='track'>
+				<aside>
+					<h2>Track2</h2>
+					<img id='play' class='NoPlaying' src='images/play.png' onclick='play(this);'>
+					<img id='record' src='images/recordOn.png'>
+					<img id='mute' src='images/muteoff.png'>
+				</aside>
+				<canvas ondrop='dropping(event)' ondragover='allowDrop(event)' draggable='true'></canvas>
+			</div>
+			<div class='track'>
+				<aside>
+					<h2>Track3</h2>
+					<img id='play' src='images/play.png'>
+					<img id='record' src='images/recordOn.png'>
+					<img id='mute' src='images/muteoff.png'>
+				</aside>
+				<canvas ondrop='dropping(event)' ondragover='allowDrop(event)' draggable='true'></canvas>
+			</div>
+			<div class='track'>
+				<aside>
+					<h2>Track4</h2>
+					<img id='play' src='images/play.png'>
+					<img id='record' src='images/recordOn.png'>
+					<img id='mute' src='images/muteoff.png'>
+				</aside>
+				<canvas ondrop='dropping(event)' ondragover='allowDrop(event)' draggable='true'></canvas>
+			</div>				
+		</section>
+
+		<footer>
+			<h1>Instrument</h1>
+		</footer>
+		<script src="javascripts/adapter.js"></script>
+		<script src="javascripts/audiodisplay.js"></script>
+		<script src="javascripts/recorderjs/recorder.js"></script>
+		<script src="javascripts/main.js"></script>
+	</body>
+</html>
