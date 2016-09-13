@@ -30,6 +30,7 @@ function toggleRecording( e ) {
 		});
 	} else {
 		// start recording  
+		console.log('toggleRec function');
 		if (!e.parentNode.parentNode.src)
 	    		return;
 	
