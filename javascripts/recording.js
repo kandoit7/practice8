@@ -118,15 +118,15 @@ function DeviceSelect(e) {
 		})
 		.catch(handleError);
 	}
+	
+	// function for many Selector Element 
+	function changeAudioDestination(event) {
+		var InputSelector = event.path[0];
+		console.log(InputSelector);
+		initAudio(InputSelector);
+	}
 }
 
-// function for many Selector Element 
-function changeAudioDestination(event) {
-	
-	var InputSelector = event.path[0];
-	console.log(InputSelector);
-	initAudio(InputSelector);
-}
 
 // fail callback
 function handleError(error) {
