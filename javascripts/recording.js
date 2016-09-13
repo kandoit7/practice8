@@ -11,6 +11,30 @@ function DeviceSelect(e) {
 	} else {
 		DevSel.hidden = true;
 	}
+	
+	//input Device Check
+	function gotDevices(deviceInfos) {
+	
+		var masterInputSelector = document.createElement('select');
+		masterInputSelector.id = 'device';
+		
+		for (var i = 0; i !== deviceInfos.length; ++i) {
+			var deviceInfo = deviceInfos[i];
+			var option = document.createElement('option');
+			option.value = deviceInfo.deviceId;
+			if (deviceInfo.kind === 'audioinput') {
+				option.text = deviceInfo.label || 'microphone ' + (masterInputSelector.length + 1);
+				masterInputSelector.appendChild(option);
+			}
+		}
+		
+		var audioInputSelect = document.querySelectorAll('select#device');
+		for ( var selector = 0; selector < audioInputSelect.length; selector++) {
+			var newInputSelector = masterInputSelector.cloneNode(true);
+			newInputSelector.addEventListener('change', changeAudioDestination);
+			audioInputSelect[selector].parentNode.replaceChild(newInputSelector, audioInputSelect[selector]);
+		}
+	}
 }
 
 //Audio recording check
@@ -54,34 +78,13 @@ function initAudio(index) {
 	.catch(handleError);
 }
 
-//input Device Check
-function gotDevices(deviceInfos) {
-	
-	var masterInputSelector = document.createElement('select');
-	masterInputSelector.id = 'device';
-	
-	for (var i = 0; i !== deviceInfos.length; ++i) {
-		var deviceInfo = deviceInfos[i];
-		var option = document.createElement('option');
-		option.value = deviceInfo.deviceId;
-		if (deviceInfo.kind === 'audioinput') {
-			option.text = deviceInfo.label || 'microphone ' + (masterInputSelector.length + 1);
-			masterInputSelector.appendChild(option);
-		}
-	}
-	
-	var audioInputSelect = document.querySelectorAll('select#device');
-	for ( var selector = 0; selector < audioInputSelect.length; selector++) {
-		var newInputSelector = masterInputSelector.cloneNode(true);
-		newInputSelector.addEventListener('change', changeAudioDestination);
-		audioInputSelect[selector].parentNode.replaceChild(newInputSelector, audioInputSelect[selector]);
-	}
-}
+
 
 // function for many Selector Element 
 function changeAudioDestination(event) {
 	
 	var InputSelector = event.path[0];
+	console.log(InputSelector);
 	initAudio(InputSelector);
 }
 
