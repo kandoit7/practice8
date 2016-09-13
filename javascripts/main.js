@@ -77,12 +77,10 @@ function Play(e) {
 				e.classList.remove("NoPlaying");
 				e.src = 'images/stop.png';
 				var link = e.parentNode.nextElementSibling.nextElementSibling.cloneNode(true);
-				console.log(link);
-				var parentLink = e.parentNode.parentNode;
+				var parentLink = e.parentNode;
 				var a = document.createElement('a');
 				a = link;
 				var existA = e.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling;
-				console.log(e);
 				console.log(existA);
 				var img = document.createElement('img');
 				img.id = 'save';
