@@ -3,6 +3,7 @@ var audioContext = new (window.AudioContext || window.webkitAudioContext) ();
 // recording button function ( toggle )
 function toggleRecording( e ) {
 	var imgchange = e;
+	console.log(e);
 	var Check = e.parentNode;
 	
 	if (e.classList.contains("recording")) {
