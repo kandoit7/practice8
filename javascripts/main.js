@@ -118,6 +118,11 @@ function Pause(e) {
 		console.log("No Recorded Track");
 	} else {
 		console.log(e.previousElementSibling.recSong);
+		if(e.previousElementSibling.recSong.play) {
+			e.previousElementSibling.recSong.pause();
+		} else {
+			e.previousElementSibling.recSong.play();
+		}
 	}
 }
 
