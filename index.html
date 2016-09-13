@@ -42,7 +42,9 @@
 					<img id='play' class='NoPlaying' src='images/play.png' onclick='Play(this);'>
 					<img id='pause' src='images/pause.png' onclick='Pause(this);'/>
 					<img id='record' src='images/recordOn.png'>
-					<img id='mute' src='images/muteoff.png' onclick='Mute(this);'>
+					<img id='mute' src='images/muteoff.png' onclick='Mute(this);'>	
+					<a id='down'></a>
+					<input type='checkbox' class='checkbox' onclick='DeviceSelect(this);'>
 				</aside>
 				<canvas ondrop='dropping(event)' ondragover='allowDrop(event)' draggable='true'></canvas>
 			</div>
