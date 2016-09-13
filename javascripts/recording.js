@@ -1,5 +1,45 @@
 var audioContext = new (window.AudioContext || window.webkitAudioContext) ();
 
+// recording button function ( toggle )
+function toggleRecording( e ) {
+	var imgchange = e;
+	var Check = e.parentNode;
+	
+	if (e.classList.contains("recording")) {
+		// stop recording
+		e.parentNode.parentNode.src.stop();
+		e.classList.remove("recording");
+		imgchange.src = 'images/recordOff.png';
+		
+		//draw signal on canvas && buffer link create
+		e.parentNode.parentNode.src.getBuffers( function(buffers) {
+			var ci = e.parentNode.nextElementSibling.id;
+   			var canvas = document.getElementById(ci);
+			drawBuffer( canvas.width, canvas.height, canvas.getContext('2d'), buffers[0] );
+			e.parentNode.parentNode.src.exportWAV(function(blob) {
+				var good = Recorder.setupDownload( blob );
+				var replace = e.parentNode.nextElementSibling.nextElementSibling.nextElementSibling;
+				var link = document.createElement("a");
+				link.id = "tracklink";
+				link.href = good;
+				link.download =  "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav"  || 'output.wav';
+				recIndex++;
+				e.parentNode.parentNode.replaceChild(link, replace);
+			});
+			
+		});
+	} else {
+		// start recording  
+		if (!e.parentNode.parentNode.src)
+	    		return;
+	
+		e.classList.add("recording");
+		imgchange.src = 'images/recordOn.png';
+		e.parentNode.parentNode.src.clear();
+		e.parentNode.parentNode.src.record();
+	}
+}
+
 //audio device select
 function DeviceSelect(e) {
 	var checkBox = document.querySelector('.checkbox');
