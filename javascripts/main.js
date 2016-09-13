@@ -170,7 +170,7 @@ function AddTrack(e) {
 			+ "		<h2>Track" + tagIndex + "</h2>"
 			+ "		<img id='play' class='NoPlaying' src='images/play.png' onclick='Play(this);'/>"
 			+ "		<img id='pause' src='images/pause.png' onclick='Pause(this);'/>"
-			+ "		<img id='record' src='images/recordOn.png'>"
+			+ "		<img id='record' src='images/recordOff.png'>"
 			+ "		<img id='mute' src='images/muteoff.png' onclick='Mute(this);'>"
 			+ "		<a id='down'></a>"
 			+ "		<input type='checkbox' class='checkbox' onclick='DeviceSelect(this);'>"
