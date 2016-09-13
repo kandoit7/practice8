@@ -4,7 +4,6 @@ var recIndex = 0;
 // recording button function ( toggle )
 function toggleRecording( e ) {
 	var imgchange = e;
-	//var Check = e.parentNode;
 	
 	if (e.classList.contains("recording")) {
 		// stop recording
@@ -30,7 +29,6 @@ function toggleRecording( e ) {
 		});
 	} else {
 		// start recording  
-		console.log('toggleRec function');
 		if (!e.parentNode.parentNode.src)
 	    		return;
 	
@@ -82,7 +80,6 @@ function DeviceSelect(e) {
 
 	  	var audioSource = index.value;
 		var idconfirm = e.parentNode.parentNode;
-		console.log(idconfirm);
 		var recordCloud = document.createElement('a');
 		var audioRecorder = null;
 		
