@@ -22,7 +22,6 @@ function dropping(e) {
 	ctx.fillStyle = '#EEEEE0';
 	ctx.fillRect(0,0,w,h);
 	
-	
 	//create the file reader to read the audio file dropped
 	var reader = new FileReader();
 	reader.onload = function(e){
@@ -148,7 +147,8 @@ function AddTrack(e) {
 			+ "		<a id='down'></a>"
 			+ "		<input type='checkbox' class='checkbox' onclick='DeviceSelect(this);'>"
 			+ "</aside>"
-			+ "<canvas ondrop='dropping(event)' ondragover='allowDrop(event)' draggable='true'></canvas>";
+			+ "<canvas ondrop='dropping(event)' ondragover='allowDrop(event)' draggable='true'></canvas>"
+			+ "<a></a>";
 	
 	var lastProc = document.getElementById("track"+tagIndex);
 	lastProc.innerHTML = tag;
