@@ -117,7 +117,6 @@ function Pause(e) {
 	if(!e.previousElementSibling.recSong) {
 		console.log("No Recorded Track");
 	} else {
-		console.log(e.previousElementSibling.recSong.paused);
 		if(e.previousElementSibling.recSong.paused) {
 			e.previousElementSibling.recSong.play(e.curT);
 		} else {
@@ -129,16 +128,30 @@ function Pause(e) {
 
 //individual mute
 function Mute(e) {
-	var muteTrack = e.previousElementSibling.previousElementSibling.previousElementSibling.gainNode;
-	if(!e.previousElementSibling.previousElementSibling.previousElementSibling.track){
-		console.log("no audio Source");
+	if(!e.previousElementSibling.previousElementSibling.previousElementSibling.gainNode) {
+		console.log("No Audio Track");
 	} else {
-		if( muteTrack.gain.value === 1) {
-			muteTrack.gain.value = 0;
-			e.src = 'images/muteon.png';
+		var muteTrack = e.previousElementSibling.previousElementSibling.previousElementSibling.gainNode;
+		if(!e.previousElementSibling.previousElementSibling.previousElementSibling.track){
+			console.log("no audio Source");
 		} else {
-			muteTrack.gain.value = 1;
-			e.src = 'images/muteoff.png';
+			if( muteTrack.gain.value === 1) {
+				muteTrack.gain.value = 0;
+				e.src = 'images/muteon.png';
+			} else {
+				muteTrack.gain.value = 1;
+				e.src = 'images/muteoff.png';
+			}
+		}
+	}
+	
+	if(!e.previousElementSibling.previousElementSibling.previousElementSibling.recSong) {
+		console.log("No Recorded Track");
+	} else {
+		if(e.previousElementSibling.previousElementSibling.previousElementSibling.recSong.muted) {
+			e.previousElementSibling.previousElementSibling.previousElementSibling.recSong.muted = false;
+		} else {
+			e.previousElementSibling.previousElementSibling.previousElementSibling.recSong.muted = true;
 		}
 	}
 }
