@@ -77,6 +77,7 @@ function Play(e) {
 				e.classList.remove("NoPlaying");
 				e.src = 'images/stop.png';
 				var link = e.parentNode.nextElementSibling.nextElementSibling.cloneNode(true);
+				console.log(link);
 				var parentLink = e.parentNode.parentNode;
 				var a = document.createElement('a');
 				a = link;
