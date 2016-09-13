@@ -3,7 +3,16 @@ var audioContext = new (window.AudioContext || window.webkitAudioContext) ();
 //audio device select
 function DeviceSelect(e) {
 	var checkBox = document.querySelector('.checkbox');
+	var DevSel = document.querySelector('#device');
+	
 	console.log(checkBox);
+	if(checkBox.checked === true) {
+		DevSel.hidden = false;
+	} else {
+		DevSel.hidden = true;
+	}
+	//navigator.mediaDevices.enumerateDevices().then(gotDevices).catch(handleError);
+	
 }
 
 //Audio recording check
@@ -86,4 +95,3 @@ function handleError(error) {
 
 //Get Input Devices
 //page load then Start function
-navigator.mediaDevices.enumerateDevices().then(gotDevices).catch(handleError);
