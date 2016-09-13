@@ -117,7 +117,7 @@ function Pause(e) {
 	if(!e.previousElementSibling.recSong) {
 		console.log("No Recorded Track");
 	} else {
-		console.log(e.previousElementSibling.recSong.pause);
+		console.log(e.previousElementSibling.recSong.paused);
 		if(e.previousElementSibling.recSong.paused) {
 			e.previousElementSibling.recSong.play(e.curT);
 		} else {
