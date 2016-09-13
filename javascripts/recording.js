@@ -15,8 +15,8 @@ function toggleRecording( e ) {
 		e.parentNode.parentNode.src.getBuffers( function(buffers) {
 			var ci = e.parentNode.nextElementSibling;
 			console.log(ci);
-   			var canvas = document.getElementById(ci);
-			drawBuffer( canvas.width, canvas.height, canvas.getContext('2d'), buffers[0] );
+   			//var canvas = document.getElementById(ci);
+			drawBuffer( ci.width, ci.height, ci.getContext('2d'), buffers[0] );
 			e.parentNode.parentNode.src.exportWAV(function(blob) {
 				var good = Recorder.setupDownload( blob );
 				var replace = e.parentNode.nextElementSibling.nextElementSibling.nextElementSibling;
