@@ -81,7 +81,6 @@ function Play(e) {
 				var a = document.createElement('a');
 				a = link;
 				var existA = e.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling;
-				console.log(existA);
 				var img = document.createElement('img');
 				img.id = 'save';
 				img.src = 'images/save.png';
@@ -146,6 +145,8 @@ function AddTrack(e) {
 			+ "		<img id='pause' src='images/pause.png' onclick='Pause(this);'/>"
 			+ "		<img id='record' src='images/recordOn.png'>"
 			+ "		<img id='mute' src='images/muteoff.png' onclick='Mute(this);'>"
+			+ "		<a id='down'></a>"
+			+ "		<input type='checkbox' class='checkbox' onclick='DeviceSelect(this);'>"
 			+ "</aside>"
 			+ "<canvas ondrop='dropping(event)' ondragover='allowDrop(event)' draggable='true'></canvas>";
 	
