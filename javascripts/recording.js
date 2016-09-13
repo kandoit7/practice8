@@ -84,6 +84,7 @@ function initAudio(index) {
 
   	var audioSource = index.value;
 	var idconfirm = index.parentNode;
+	console.log(idconfirm);
 	var recordCloud = document.createElement('a');
 	var audioRecorder = null;
 	
@@ -126,7 +127,6 @@ function initAudio(index) {
 function changeAudioDestination(event) {
 	
 	var InputSelector = event.path[0];
-	console.log(InputSelector);
 	initAudio(InputSelector);
 }
 
