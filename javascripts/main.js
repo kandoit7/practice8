@@ -66,6 +66,37 @@ function Play(e) {
 			e.track.stop();
 		}
 	}
+	
+	if(!e.recSong) {
+		e.recSong = new Audio();
+		console.log(e);
+	} else {
+		if(e.parentNode.nextElementSibling.nextElementSibling.href === "") {
+			console.log("no recorded audio");
+		} else {
+			if(e.classList.contains("NoPlaying")){
+				e.classList.remove("NoPlaying");
+				e.src = 'images/stop.png';
+				var link = e.parentNode.nextElementSibling.nextElementSibling.cloneNode(true);
+				var parentLink = e.parentNode.parentNode;
+				var a = document.createElement('a');
+				a = link;
+				var existA = e.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling;
+				var img = document.createElement('img');
+				img.id = 'save';
+				img.src = 'images/save.png';
+				a.appendChild(img);
+				parentLink.replaceChild(a, existA);
+				e.recSong.src = link.href;
+				e.recSong.play();
+				
+			} else {
+				e.classList.add("NoPlaying");
+				e.src = 'images/play.png';
+				e.recSong.pause();
+			}
+		}
+	}
 }
 
 //pause all track 
