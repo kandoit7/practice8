@@ -2,7 +2,7 @@
 //Audio recording check
 function initAudio(index) {
 
-  var audioSource = index.value;
+  	var audioSource = index.value;
 	var idconfirm = index.parentNode;
 	var recordCloud = document.createElement('a');
 	var audioRecorder = null;
@@ -44,7 +44,6 @@ function initAudio(index) {
 function gotDevices(deviceInfos) {
 	
 	var masterInputSelector = document.createElement('select');
-	masterInputSelector.hidden = true;
 	
 	for (var i = 0; i !== deviceInfos.length; ++i) {
 		var deviceInfo = deviceInfos[i];
@@ -56,7 +55,7 @@ function gotDevices(deviceInfos) {
 		}
 	}
 	
-	var audioInputSelect = document.querySelectorAll('select#change');
+	var audioInputSelect = document.querySelectorAll('select#device');
 	for ( var selector = 0; selector < audioInputSelect.length; selector++) {
 		var newInputSelector = masterInputSelector.cloneNode(true);
 		newInputSelector.addEventListener('change', changeAudioDestination);
