@@ -19,7 +19,7 @@ function toggleRecording( e ) {
 			drawBuffer( ci.width, ci.height, ci.getContext('2d'), buffers[0] );
 			e.parentNode.parentNode.src.exportWAV(function(blob) {
 				var good = Recorder.setupDownload( blob );
-				var replace = e.parentNode.nextElementSibling.nextElementSibling.nextElementSibling;
+				var replace = e.parentNode.nextElementSibling.nextElementSibling;
 				var link = document.createElement("a");
 				link.id = "tracklink";
 				link.href = good;
