@@ -99,16 +99,25 @@ function Play(e) {
 
 //pause all track 
 function Pause(e) {
-	var pauseTrack = e.previousElementSibling.track;
-	console.log(pauseTrack);
-	if(!e.previousElementSibling.track.context){
-		console.log("no audio Source");
+	if(!e.previousElementSibling.track) {
+		console.log("No Audio Track");
 	} else {
-		if(pauseTrack.playbackRate.value === 1) {
-			pauseTrack.playbackRate.value = 0;
+		var pauseTrack = e.previousElementSibling.track;
+		if(!e.previousElementSibling.track.context){
+			console.log("no audio Source");
 		} else {
-			pauseTrack.playbackRate.value = 1;
+			if(pauseTrack.playbackRate.value === 1) {
+				pauseTrack.playbackRate.value = 0;
+			} else {
+				pauseTrack.playbackRate.value = 1;
+			}
 		}
+	}
+	
+	if(!e.previousElementSibling.song) {
+		console.log("No Recorded Track");
+	} else {
+		console.log(e.previousElementSibling.song);
 	}
 }
 
