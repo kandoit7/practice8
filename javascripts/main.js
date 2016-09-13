@@ -114,10 +114,10 @@ function Pause(e) {
 		}
 	}
 	
-	if(!e.previousElementSibling.song) {
+	if(!e.previousElementSibling.recSong) {
 		console.log("No Recorded Track");
 	} else {
-		console.log(e.previousElementSibling.song);
+		console.log(e.previousElementSibling.recSong);
 	}
 }
 
