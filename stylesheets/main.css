@@ -98,6 +98,12 @@ canvas {
 	vertical-align: middle;
 }
 
+#device {
+	width: 21px;
+	height: 21px;
+	margin: 0px;
+}
+
 
 .track {
 	height: 80px;
