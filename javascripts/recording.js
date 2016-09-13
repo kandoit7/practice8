@@ -42,6 +42,9 @@ function toggleRecording( e ) {
 //audio device select
 function DeviceSelect(e) {
 	var checkBox = document.querySelector('.checkbox');
+	var ch = e;
+	console.log(checkBox);
+	console.log(e);
 	var DevSel = document.querySelector('#device');
 	
 	if(checkBox.checked === true) {
