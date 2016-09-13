@@ -3,7 +3,6 @@ var audioContext = new (window.AudioContext || window.webkitAudioContext) ();
 // recording button function ( toggle )
 function toggleRecording( e ) {
 	var imgchange = e;
-	console.log(e);
 	var Check = e.parentNode;
 	
 	if (e.classList.contains("recording")) {
@@ -84,6 +83,7 @@ function DeviceSelect(e) {
 
 	  	var audioSource = index.value;
 		var idconfirm = e.parentNode.parentNode;
+		console.log(idconfirm);
 		var recordCloud = document.createElement('a');
 		var audioRecorder = null;
 		
@@ -123,7 +123,6 @@ function DeviceSelect(e) {
 	// function for many Selector Element 
 	function changeAudioDestination(event) {
 		var InputSelector = event.path[0];
-		console.log(InputSelector);
 		initAudio(InputSelector);
 	}
 }
