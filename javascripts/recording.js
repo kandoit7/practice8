@@ -5,14 +5,12 @@ function DeviceSelect(e) {
 	var checkBox = document.querySelector('.checkbox');
 	var DevSel = document.querySelector('#device');
 	
-	console.log(checkBox);
 	if(checkBox.checked === true) {
 		DevSel.hidden = false;
+		navigator.mediaDevices.enumerateDevices().then(gotDevices).catch(handleError);
 	} else {
 		DevSel.hidden = true;
 	}
-	//navigator.mediaDevices.enumerateDevices().then(gotDevices).catch(handleError);
-	
 }
 
 //Audio recording check
