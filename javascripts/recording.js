@@ -1,9 +1,10 @@
 var audioContext = new (window.AudioContext || window.webkitAudioContext) ();
+var recIndex = 0;
 
 // recording button function ( toggle )
 function toggleRecording( e ) {
 	var imgchange = e;
-	var Check = e.parentNode;
+	//var Check = e.parentNode;
 	
 	if (e.classList.contains("recording")) {
 		// stop recording
@@ -14,8 +15,6 @@ function toggleRecording( e ) {
 		//draw signal on canvas && buffer link create
 		e.parentNode.parentNode.src.getBuffers( function(buffers) {
 			var ci = e.parentNode.nextElementSibling;
-			console.log(ci);
-   			//var canvas = document.getElementById(ci);
 			drawBuffer( ci.width, ci.height, ci.getContext('2d'), buffers[0] );
 			e.parentNode.parentNode.src.exportWAV(function(blob) {
 				var good = Recorder.setupDownload( blob );
