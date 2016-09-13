@@ -1,3 +1,10 @@
+var audioContext = new (window.AudioContext || window.webkitAudioContext) ();
+
+//audio device select
+function DeviceSelect(e) {
+	var checkBox = document.querySelector('.checkbox');
+	console.log(checkBox);
+}
 
 //Audio recording check
 function initAudio(index) {
@@ -44,6 +51,7 @@ function initAudio(index) {
 function gotDevices(deviceInfos) {
 	
 	var masterInputSelector = document.createElement('select');
+	masterInputSelector.id = 'device';
 	
 	for (var i = 0; i !== deviceInfos.length; ++i) {
 		var deviceInfo = deviceInfos[i];
