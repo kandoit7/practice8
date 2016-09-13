@@ -69,7 +69,6 @@ function Play(e) {
 	
 	if(!e.recSong) {
 		e.recSong = new Audio();
-		console.log(e);
 	} else {
 		if(e.parentNode.nextElementSibling.nextElementSibling.href === "") {
 			console.log("no recorded audio");
@@ -82,6 +81,8 @@ function Play(e) {
 				var a = document.createElement('a');
 				a = link;
 				var existA = e.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling;
+				console.log(e);
+				console.log(existA);
 				var img = document.createElement('img');
 				img.id = 'save';
 				img.src = 'images/save.png';
